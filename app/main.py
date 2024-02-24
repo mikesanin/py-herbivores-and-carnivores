@@ -20,16 +20,16 @@ class Animal:
         return (f"{{Name: {self.name}, "
                 f"Health: {self.health}, "
                 f"Hidden: {self.hidden}}}")
-
                 
 class Herbivore(Animal):
     def hide(self) -> None:
         self.hidden = not self.hidden
 
+class Carnivore(Animal):
+    def bite(self, target: Animal) -> None:
+        if isinstance(target, Herbivore) and not target.hidden:
+            target.set_health(target.health - 50)
 
-def bite(target: Animal) -> None:
-    if isinstance(target, Herbivore) and not target.hidden:
-        target.set_health(target.health - 50)
 
 
 class Carnivore(Animal):
