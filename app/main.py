@@ -31,5 +31,6 @@ def bite(target: Animal) -> None:
     if isinstance(target, Herbivore) and not target.hidden:
         target.set_health(target.health - 50)
 
+
 class Carnivore(Animal):
     pass
